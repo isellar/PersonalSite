@@ -5,7 +5,10 @@ import ResumeHeader from './components/ResumeHeader';
 import ResumeList from './components/ResumeList';
 import ResumeFooter  from './components/ResumeFooter';
 
-import Sections from 'ResumeApp/collections/Sections';
+import Resume from 'ResumeApp/collections/Resume';
+
+var rbs = require('react-bootstrap'),
+Panel = rbs.Panel;
 
 @ReactMixin.decorate(ReactMeteorData)
 export default class ResumeMain extends Component {
@@ -15,26 +18,34 @@ export default class ResumeMain extends Component {
   };
 
   getMeteorData() {
-    Meteor.subscribe('sections');
+    Meteor.subscribe('resume');
 
-    const sections = Sections.find().fetch();
+    const resume = Resume.findOne({"status": "locked"});
 
     return {
-      sections
+      resume
     };
   }
 
   render() {
-    if (!this.data.sections) {
-      console.log(this.data.sections);
-      return null;
+    var resume = this.data.resume;
+
+    if (!resume) {
+      const title = (
+        <h3>No Resume Found</h3>
+      );
+      return (
+        <Panel header={title} bsStyle="danger">
+          Could not find a default resume.
+        </Panel>
+      );
     }
 
     return (
         <div>
-          <ResumeHeader />
+          <ResumeHeader name={resume.name} sections={resume.sections.map(function (section) { return {name: section.name, refname: section.refname}; })}/>
           <div className="container main">
-            <ResumeList sections={this.data.sections} />
+            <ResumeList sections={this.data.resume.sections} />
           </div>
           <ResumeFooter />
         </div>

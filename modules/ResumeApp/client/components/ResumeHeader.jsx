@@ -8,7 +8,16 @@ MenuItem = rbs.MenuItem
 ;
 
 export default class ResumeHeader extends Component {
+  static propTypes = {
+    name: PropTypes.string.isRequired,
+    sections: PropTypes.array.isRequired
+  };
+
   render() {
+
+    var NavItems = this.props.sections.map(function(section, key){
+      return (<NavItem eventKey={key} href={"#" + section.refname}>{section.name}</NavItem>);
+    });
 
     return (
       <div>
@@ -16,15 +25,11 @@ export default class ResumeHeader extends Component {
           <div className="nav-wrapper">
             <Navbar.Header>
               <Navbar.Brand>
-                <a href="#">Ian Sellar</a>
+                <a href="#">{this.props.name}</a>
               </Navbar.Brand>
             </Navbar.Header>
             <Nav>
-              <NavItem eventKey={1} href="#summary">Professional Summary</NavItem>
-              <NavItem eventKey={2} href="#skills">Skills</NavItem>
-              <NavItem eventKey={3} href="#history">Work History</NavItem>
-              <NavItem eventKey={4} href="#education">Education</NavItem>
-              <NavItem eventKey={5} href="#projects">Projects</NavItem>
+              {NavItems}
             </Nav>
           </div>
         </Navbar>
