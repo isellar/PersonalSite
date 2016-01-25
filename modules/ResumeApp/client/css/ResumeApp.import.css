@@ -18,12 +18,14 @@ body {
 }
 
 .panel-wrapper .panel{
-  margin: 0;
+  margin:0;
 }
 
 .panel-default .panel-heading{
   background: white;
   border: 0;
+  padding: 0;
+  margin-left: -10px;
 }
 
 .panel-title{
@@ -53,20 +55,19 @@ body {
   text-decoration: none;
 }
 
+.panel-heading .panel-title h1{
+  margin: 0;
+}
+
 b, p{
   display: inline;
 }
 
-#banner-info{
-  text-align: center;
-  padding: 0px;
-  margin: 0px;
-  padding: 10px;
-  background-color: white;
-  font-size: 16px;
-  width: 100%;
+.navbar-brand{
+  padding-right: 0px;
 }
 
-.list-wrapper{
-  margin-top: -30px;
+.navbar-brand a{
+  text-decoration: underline;
+  color: white;
 }

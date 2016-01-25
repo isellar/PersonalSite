@@ -2,8 +2,7 @@ import { Component } from 'react';
 import ReactMixin from 'react-mixin';
 
 import ResumeHeader from './components/ResumeHeader';
-import ResumeList from './components/ResumeList';
-import ResumeFooter  from './components/ResumeFooter';
+import ResumeList from './components/ResumeList'
 
 import Resume from 'ResumeApp/collections/Resume';
 
@@ -33,11 +32,11 @@ export default class ResumeMain extends Component {
     if (!resume) {
       return(<div></div>);
     }
+    console.log(resume.infoitems);
 
     return (
         <div>
-          <ResumeHeader name={resume.name} sections={resume.sections.map(function (section) { return {name: section.name, refname: section.refname}; })}/>
-          <ResumeFooter info={resume.infoline}/>
+          <ResumeHeader info={resume.infoitems} name={resume.name} sections={resume.sections.map(function (section) { return {name: section.name, refname: section.refname}; })}/>
           <div className="container main">
             <ResumeList sections={this.data.resume.sections} />
           </div>

@@ -1,8 +1,8 @@
 export default {
-	name: "Ian Sellar",
-	infoline: "(949) 525 - 7435 • ian@sellarfamily.com • IanSellar.com",
+	name: "IanSellar.com",
+	infoitems: ["(949) 525 - 7435", "ian@sellarfamily.com"],
 	status: "locked",
-	version: 6,
+	version: 9,
 	sections: [
 		{
 			name: "Professional Summary",
