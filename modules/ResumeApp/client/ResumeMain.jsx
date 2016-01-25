@@ -31,23 +31,16 @@ export default class ResumeMain extends Component {
     var resume = this.data.resume;
 
     if (!resume) {
-      const title = (
-        <h3>No Resume Found</h3>
-      );
-      return (
-        <Panel header={title} bsStyle="danger">
-          Could not find a default resume.
-        </Panel>
-      );
+      return(<div></div>);
     }
 
     return (
         <div>
           <ResumeHeader name={resume.name} sections={resume.sections.map(function (section) { return {name: section.name, refname: section.refname}; })}/>
+          <ResumeFooter info={resume.infoline}/>
           <div className="container main">
             <ResumeList sections={this.data.resume.sections} />
           </div>
-          <ResumeFooter />
         </div>
     );
   }

@@ -1,8 +1,8 @@
 export default {
 	name: "Ian Sellar",
-	infoline: "7800 San Andres Ave, Atascadero, CA 93422 • Cell: 9495257435 • ian@sellarfamily.com • IanSellar.com",
+	infoline: "(949) 525 - 7435 • ian@sellarfamily.com • IanSellar.com",
 	status: "locked",
-	version: 3,
+	version: 6,
 	sections: [
 		{
 			name: "Professional Summary",
@@ -241,12 +241,12 @@ export default {
 					{
 						key: 0,
 						type: "bold",
-						text: "Networking Lab Assistant, "
+						text: "Bachelor of Science, "
 					},
 					{
 						key: 1,
 						type: "text",
-						text: "01/2012 to 04/2012"
+						text: "Computer Science, 2015"
 					},
 					{
 						key: 2,

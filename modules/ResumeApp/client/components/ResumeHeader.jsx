@@ -16,21 +16,24 @@ export default class ResumeHeader extends Component {
   render() {
 
     var NavItems = this.props.sections.map(function(section, key){
-      return (<NavItem eventKey={key} href={"#" + section.refname}>{section.name}</NavItem>);
+      return (<NavItem key={key} href={"#" + section.refname}>{section.name}</NavItem>);
     });
 
     return (
-      <div>
-        <Navbar fixedTop>
+      <div className="container">
+        <Navbar fixedTop inverse className="row">
           <div className="nav-wrapper">
             <Navbar.Header>
               <Navbar.Brand>
                 <a href="#">{this.props.name}</a>
               </Navbar.Brand>
+              <Navbar.Toggle />
             </Navbar.Header>
-            <Nav>
-              {NavItems}
-            </Nav>
+            <Navbar.Collapse>
+              <Nav>
+                {NavItems}
+              </Nav>
+            </Navbar.Collapse>
           </div>
         </Navbar>
       </div>
