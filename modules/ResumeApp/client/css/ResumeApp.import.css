@@ -69,5 +69,10 @@ b, p{
 
 .navbar-brand a{
   text-decoration: underline;
+  color: rgb(157,157,157);
+}
+
+.navbar-brand a:hover {
+  text-decoration: none;
   color: white;
 }
