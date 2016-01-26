@@ -21,6 +21,7 @@ export default class ResumeHeader extends Component {
     var NavItems = this.props.sections.map(function(section, key){
       return (<NavItem key={key} href={"#" + section.refname}>{section.name}</NavItem>);
     });
+    var info = this.props.info ? this.props.info : [];
 
     return (
         <Navbar fixedTop inverse className="row">
