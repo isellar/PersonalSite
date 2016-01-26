@@ -13,7 +13,7 @@ export default class ResumeHeader extends Component {
   static propTypes = {
     name: PropTypes.string.isRequired,
     sections: PropTypes.array.isRequired,
-    info: PropTypes.array
+    info: PropTypes.array.isRequired
   };
 
   render() {
@@ -21,7 +21,9 @@ export default class ResumeHeader extends Component {
     var NavItems = this.props.sections.map(function(section, key){
       return (<NavItem key={key} href={"#" + section.refname}>{section.name}</NavItem>);
     });
-    var info = this.props.info ? this.props.info : [];
+    var infoblock = this.props.info.map(function(item, key){
+      return (<ResumeInfoItem item={item} last={key === self.props.info.length -1} />);
+    }
 
     return (
         <Navbar fixedTop inverse className="row">
@@ -37,9 +39,7 @@ export default class ResumeHeader extends Component {
                 {NavItems}
               </Nav>
               <Nav pullRight>
-                {this.props.info.map(function(item, key){
-                  return (<ResumeInfoItem item={item} last={key === self.props.info.length -1} />);
-                })}
+                {infoblock}
               </Nav>
             </Navbar.Collapse>
           </div>

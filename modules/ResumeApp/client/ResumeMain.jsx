@@ -32,7 +32,7 @@ export default class ResumeMain extends Component {
     if (!resume) {
       return(<div></div>);
     }
-    console.log(resume.infoitems);
+    console.log(resume);
 
     return (
         <div>
