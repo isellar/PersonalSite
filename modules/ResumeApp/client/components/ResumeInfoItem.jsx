@@ -17,7 +17,6 @@ export default class ResumeInfoItem extends Component {
   }
 
   validatePhone(phone){
-    console.log(phone);
     if(phone)
       return phone.match(/^\+?\(?([0-9]{3})?[-.() ]*([0-9]{3})[-.() ]*([0-9]{4})$/);
     else

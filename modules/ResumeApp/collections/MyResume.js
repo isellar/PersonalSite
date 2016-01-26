@@ -2,9 +2,10 @@ export default {
 	name: "IanSellar.com",
 	infoitems: ["(949) 525 - 7435", "ian@sellarfamily.com"],
 	status: "locked",
-	version: 9,
+	version: 10,
 	sections: [
 		{
+			key: 0,
 			name: "Professional Summary",
 			refname: "summary",
 			content: {
@@ -13,6 +14,7 @@ export default {
 			}
 		},
 		{
+			key: 1,
 			name: "Skills",
 			refname: "skills",
 			content: {
@@ -77,6 +79,7 @@ export default {
 			}
 		},
 		{
+			key: 2,
 			name: "Work History",
 			refname: "history",
 			content: {
@@ -233,6 +236,7 @@ export default {
 			}
 		},
 		{
+			key: 3,
 			name: "Education",
 			refname: "education",
 			content: {
@@ -266,6 +270,7 @@ export default {
 			}
 		},
 		{
+			key: 4,
 			name: "Projects",
 			refname: "projects",
 			content: {

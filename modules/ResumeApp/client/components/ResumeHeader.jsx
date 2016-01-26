@@ -22,8 +22,10 @@ export default class ResumeHeader extends Component {
       return (<NavItem key={key} href={"#" + section.refname}>{section.name}</NavItem>);
     });
     var infoblock = this.props.info.map(function(item, key){
-      return (<ResumeInfoItem item={item} last={key === self.props.info.length -1} />);
+      return (<ResumeInfoItem key={key} item={item} last={key === self.props.info.length -1} />);
     });
+
+    console.log("Header");
 
     return (
         <Navbar fixedTop inverse className="row">
