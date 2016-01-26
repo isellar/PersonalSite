@@ -23,7 +23,7 @@ export default class ResumeHeader extends Component {
     });
     var infoblock = this.props.info.map(function(item, key){
       return (<ResumeInfoItem item={item} last={key === self.props.info.length -1} />);
-    }
+    });
 
     return (
         <Navbar fixedTop inverse className="row">
