@@ -10,7 +10,7 @@ export default class ResumeList extends Component {
     console.log("List");
     return (
       <div className="list-wrapper col-lg-12">
-        {this.props.sections.map(section => <ResumeSection section={section} />)}
+        {this.props.sections.map(section => <ResumeSection key={section.key} section={section} />)}
       </div>
     );
   }

@@ -36,7 +36,7 @@ export default class ResumeMain extends Component {
 
     return (
         <div>
-          <ResumeHeader info={resume.infoitems} name={resume.name} sections={resume.sections.map(function (section) { return {name: section.name, refname: section.refname}; })}/>
+          <ResumeHeader info={resume.infoitems} name={resume.name} sections={resume.sections}/>
           <div className="container main">
             <ResumeList sections={this.data.resume.sections} />
           </div>

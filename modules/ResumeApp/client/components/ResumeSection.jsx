@@ -51,7 +51,7 @@ export default class ResumeSection extends Component {
   	);
 
     return (
-      <div key={this.props.section.key} className="row panel-wrapper">
+      <div className="row panel-wrapper">
       	<a {...extra} className="ref">&nbsp;</a>
     		<Panel header={title} collapsible expanded={this.state.open}>
     		  {this.processContent(this.props.section.content)}
